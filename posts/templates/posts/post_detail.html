@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+
+{% block content_title %}
+    {{ post.title }}
+    <div class="tags">
+
+    </div>
+{% endblock %}
+
+{% block content %}
+        {% for tag in tags %}
+            <button type="button" class="btn btn-outline-primary">{{ tag.name }}</button>
+        {% endfor %}<br>
+    {{ post.body }}
+{% endblock %}

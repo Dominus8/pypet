@@ -39,13 +39,22 @@
   </div>
 </nav>
 
-{% block content_title %}
+    <div class="container">
+        <div class="row" style="margin-top:100px;">
+            <div class="col-md-12">
+                <h2>
+                    {% block content_title %}
 
-{% endblock %}
+                    {% endblock %}
+                </h2>
 
+                <blockquote>
+                    {% block content %}
 
-{% block content %}
-
-{% endblock %}
+                    {% endblock %}
+                </blockquote>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
