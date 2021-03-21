@@ -10,18 +10,20 @@
 
 {% block content %}
 
-    {% for post in posts %}
+    {% for post in pages.items %}
         <p>
             <a href="{{ url_for('posts.post_detail', slug=post.slug) }}">{{ post.title }}</a>
         </p>
     {% endfor %}
     <nav>
       <ul class="pagination pagination-sm">
-        <li class="page-item active" aria-current="page">
-          <span class="page-link">1</span>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+          {% for page in pages.iter_pages() %}
+
+            <li {% if page == pages.page %} class="page-item active" {% endif %} aria-current="page">
+                <a href="./?page={{ page }}"> <span class="page-link">{{ page }}</span></a>
+            </li>
+
+          {% endfor %}
       </ul>
     </nav>
 
