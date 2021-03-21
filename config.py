@@ -8,3 +8,4 @@ class Configuration(object):
         SQLALCHEMY_DATABASE_URI = 'sqlite://///Users/ilarudy/PycharmProjects/flaskProject1/pypet.db'
     elif platform == "win32":
         SQLALCHEMY_DATABASE_URI = 'sqlite://///Users/ilarudy/PycharmProjects/flaskProject1/pypet.db'
+    SECRET_KEY = 'secret 12345'
