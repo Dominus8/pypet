@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import render_template
 from flask import request
-from models import Post, Tag
+from models import *
 from .forms import PostForm
 from app import db
 from flask import redirect
@@ -32,7 +32,7 @@ def create_post():
 def edit_post(slug):
     post = Post.query.filter(Post.slug == slug).first()
 
-    if request.method=='POST':
+    if request.method == 'POST':
         form = PostForm(formdata=request.form, obj=post)
         form.populate_obj(post)
         db.session.commit()
