@@ -44,7 +44,11 @@
         <!-- /Форма поиска-->
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url_for('posts.create_post') }}">add post</a>
+                <!--<a class="nav-link active" aria-current="page" href="{{ url_for('posts.create_post') }}">add post</a>-->
+                {% if current_user.has_role('admin') %}
+                    <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                {% endif %}
+
             </li>
         </ul>
     </div>

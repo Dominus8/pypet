@@ -11,3 +11,5 @@ class Configuration(object):
     # elif platform == "win32":
     #    SQLALCHEMY_DATABASE_URI = 'sqlite://///Users/ilarudy/PycharmProjects/flaskProject1/pypet.db'
     SECRET_KEY = 'secret 12345'
+    SECURITY_PASSWORD_SALT = 'kek'
+    SECURITY_PASSWORD_HASH = 'sha256_crypt'
